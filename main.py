@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return FileResponse("public/index.html")
+    return FileResponse("public/file1.jpg")
