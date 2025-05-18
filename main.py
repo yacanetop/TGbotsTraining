@@ -1,7 +1,7 @@
-from fastapi import FastAPI
-from fastapi.responses import FileResponse
+from fastapi import FastAPI, Path
+ 
 app = FastAPI()
-
-@app.get("/")
-def root():
-    return FileResponse("public/file1.jpg")
+ 
+@app.get("/users/{name}")
+def users(name:str  = Path(min_length=3, max_length=20)):
+    return {"name": name}
