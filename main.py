@@ -1,7 +1,7 @@
-from fastapi import FastAPI, Path
+from fastapi import FastAPI
  
 app = FastAPI()
  
-@app.get("/users/{name}")
-def users(name:str  = Path(min_length=3, max_length=20)):
-    return {"name": name}
+@app.get("/")
+def home() -> dict[str, str]:
+    return 
